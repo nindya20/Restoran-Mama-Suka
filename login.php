@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="assets/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.css">
+    <style>
+    body{
+    background-color:bisque;
+    background-size: 100%;
+    }
+    .underline-title {
+      background: maroon;
+      height: 4px;
+      margin: 1.1rem auto 0 auto;
+      width: 500px;
+  }
+  </style>
+</head>
+<body>
+<marquee style="color: white; background-color:indianred"width="1500" height="30">Kepuasan Pelanggan Adalah Tujuan Utama Kami @mama_suka Ingin pesan? hubungi +6282233144153</marquee>
+    <div class="jumbotron" style="text-align: center; background-color:maroon;">
+        <h1 style="color:white; font-size: 70px; font-family:Arial, Helvetica, sans-serif">Selamat Datang</h1>
+        <p style="color:snow; font-size:30px">Restoran Mama Suka</p> 
+        <a href="home.php" class="btn btn-lg btn-primary">Kembali</a>
+        <a href="register.php" class="btn btn-lg btn-danger">Daftar</a>
+      </div>
+      <nav class="navbar navbar-expand-sm" style="background-color:indianred">
+        <a class="navbar-brand" style="color:snow; font-size: 25px" href="home.php">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color:snow; font-size:17px" href="restoran.php">Restaurant</a>
+            </li>   
+          </ul>
+        </div>  
+      </nav>
+      <br>
+<?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan'] == "gagal"){
+			echo "Login gagal! username dan password salah!";
+		}else if($_GET['pesan'] == "logout"){
+			echo "Anda telah berhasil logout";
+		}else if($_GET['pesan'] == "belum_login"){
+			echo "Anda harus login untuk mengakses halaman admin";
+		}
+	}
+	?>
+	<center>
+	<div id="card-content">
+	  <div id="card-title">
+    <h2>Login</h2>
+	  <div class="underline-title"></div>
+    </div>
+	<br>
+<form action="cek_login.php" method="post">		
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="login" value="Log In"></td>
+			</tr>
+		</table>
+	</form>
+	</center>
+	<br>
+          <div class="jumbotron text-center" style="margin-bottom:0; background-color: indianred; color:snow">
+          <h1>Contact Information</h1>
+          <p>Restoran Mama Suka</p>
+          <p>Jl. Raya Pekulo, Srono Banyuwangi</p>
+          <p>34845, Banyuwangi - Jawa Timur</p>
+          <p>Telp: +6282233144153</p>
+          <p>Email:info@mama_suka.com</p>
+          </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="assets/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+</body>
+</html>
